@@ -1,0 +1,102 @@
+.box
+{
+    width: 120px;
+    height: 25px;
+    background-color: red;
+    color: white;
+    
+    
+}
+.ip1{
+    position: relative;
+    top: 4px ;
+    left: 1px;
+    
+}
+#id3{
+    font-size: 14px;
+    align: center;
+}
+#id1{
+    font-size: 8px;
+    align: center;
+}
+#id2{
+    font-size: 6px;
+    align: center;
+}
+
+.abc{
+    width: 150px;
+    height: 150px;
+     border-radius: 10%;
+    background-color: red;
+    position: absolute;
+    top: 170px;
+    left:10px;
+    background-image: url(22.jpg);
+    background-size: 30%;
+}
+.aaa{
+    width: 150px;
+    height: 150px;
+     border-radius: 30%;
+    background-color: red;
+    position: absolute;
+    top: 170px;
+    left:180px;
+}
+
+.abc1{
+    width: 150px;
+    height: 150px;
+     border-radius: 10%;
+    background-color: red;
+    position: absolute;
+    top: 340px;
+    left:180px;
+}
+.aaa1{
+    width: 150px;
+    height: 150px;
+     border-radius: 30%;
+    background-color: red;
+    position: absolute;
+    top: 340px;
+    left:10px;
+}
+
+.hhh{
+    width: 120px;
+    height: 25px;
+    background-color: red;
+    position:absolute;
+     top: 550px;
+    left:10px;
+}
+.jjj{
+    width: 20px;
+    height: 20px;
+    background-color: blue  ;
+    border-radius: 50%;
+    position: absolute;
+    top: 540px;
+    left:15px;
+}
+.hhh1{
+    width: 120px;
+    height: 25px;
+    background-color: rgb(172, 172, 172);
+    position:absolute;
+     top: 555px;
+    left:15px;
+}
+.lll{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    top: 620px;
+    left: 25px;
+    transform: rotate(45deg);
+}

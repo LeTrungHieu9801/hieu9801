@@ -1,0 +1,60 @@
+.b1{
+    border-radius: 999px;  
+    background-color: rgb(90, 86, 86);
+    color: ivory;
+    border: none;
+    width: 100px ;
+    height: 30px;
+    font-weight: bold;
+
+  }
+  li{
+      display: inline-block;
+      color: black;
+      padding: 10px 10px 0px 0px;
+      font-weight: bold;
+      /* border-image: url(123.png) 30 round;
+      border: 10px solid transparent;
+      padding: 15px; */
+      
+
+  }
+  .box{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      border-radius: 50%;
+      position: relative;
+      right: calc(-50% + 50px) ;
+      top: 200px;
+ 
+  }
+
+  h1
+  {
+     font-size: 80px;
+     color: black;
+     position: relative;
+     right: -50px;
+  }
+  h5{
+      color: rgba(139, 138, 136, 0.877);
+      font-size: 15px;
+     position: relative;
+     right: -50px;
+  }
+  .header{
+      background-image:url( https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-9/123512369_908569606341836_1935615388645368312_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=uxHnlG4eFOQAX_l9cG8&_nc_ht=scontent.fhan3-1.fna&oh=00_AT9tAy7671_5589wSGyf6yJbSVE-OkyIwxd7oFkccfFSVg&oe=61FBB67A);
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: top right;
+      
+  }
+  .header{
+     
+  }
+  .a1
+  {
+      text-decoration: none;
+      color: white;
+  }

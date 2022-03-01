@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTVNB9[Javascript]</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #MUC1 {
+            display: flex;
+            width: 100%;
+            height: 100px;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        .input {
+            width: 250px;
+        }
+
+        .label1 {
+            font-weight: bold;
+            font-size: 12px;
+
+        }
+
+        .bancannhap {
+            color: red;
+            font-size: 10px;
+        }
+
+        .buttonThem {
+            margin-left: 2%;
+            margin-top: 37.5px;
+        }
+
+        .Them {
+            background: rgb(13, 86, 241);
+            color: white;
+            border: none;
+            padding: 3px 8px;
+        }
+
+        .ttgvcn {
+            margin-left: 2%;
+
+        }
+
+        #MUC2 {
+            display: flex;
+            width: 100%;
+            height: 100px;
+        }
+
+        #list-Lop {
+            width: 250px;
+        }
+
+        .hotensv {
+            margin-left: 2%;
+        }
+
+        #list-birthday {
+            width: 50.075px;
+            height: 22px;
+        }
+
+        .danhsachnamsinh {
+            margin-left: 2%;
+        }
+
+        .table {
+            border-collapse: collapse;
+            min-width: 700px;
+
+        }
+
+        .table tr th {
+            text-align: center;
+            background-color: rgb(13, 86, 241);
+            color: white;
+            font-weight: bold;
+            border: 1px solid black;
+
+        }
+        .table tr td {
+            text-align: center;
+            border: 1px solid black;
+        }
+        span {
+            font-size: 13px;
+        }
+
+        #list-birthday {
+            width: 60px;
+        }
+
+        .thongbaosoluong {
+            color: rgb(18, 214, 214);
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- MỤC 1 THÔNG TIN LỚP HỌC -->
+    <h1>THÔNG TIN LỚP HỌC</h1>
+    <div id="MUC1">
+        <div class="lop">
+            <!-- CỘT INPUT TEXT LỚP-->
+            <p class="label1">Lớp<span style="color: red;"> &#42;</span> </p>
+            <input id="input1" class="input" type="text">
+            <p class="bancannhap" id="err-a" hidden>Bạn cần phải nhập thông tin này</p>
+        </div>
+        <div class="ttgvcn">
+            <!-- CỘT INPUT TEXT Thông tin giáo viên chủ nhiệm-->
+            <p class="label1">Thông tin giáo viên chủ nhiệm</p>
+            <input id="input2" class="input" type="text">
+            <p class="bancannhap" id="err-b" hidden>Bạn cần phải nhập thông tin này</p>
+        </div>
+        <!-- Nút nhấn "Thêm" -->
+        <div class="buttonThem">
+            <button onclick="nhap()" class="Them">Thêm</button>
+        </div>
+    </div>
+    <hr>
+
+    <!-- MỤC 2 THÔNG TIN SINH VIÊN -->
+    <h1>THÔNG TIN SINH VIÊN</h1>
+    <div id="MUC2">
+        <div class="danhsach">
+            <!-- CỘT Danh sách sinh viên-->
+            <p class="label1">Danh sách lớp</p>
+            <select id="list-Lop">
+
+            </select>
+            <p id="soluongsv" class="thongbaosoluong"></p>
+        </div>
+        <div class="hotensv">
+            <!-- CỘT INPUT TEXT Họ tên sinh viên-->
+            <p class="label1">Họ tên sinh viên <span style="color: red;">&#42</span></p>
+            <input id="hoten" class="input" type="text">
+            <p class="bancannhap" id="err-d" hidden>Bạn cần phải nhập thông tin này</p>
+        </div>
+        <!-- Select Năm sinh -->
+        <div class="danhsachnamsinh">
+            <p class="label1">Năm sinh</p>
+            <select id="list-birthday"></select>
+        </div>
+
+        <!-- Nút nhấn "Thêm" -->
+        <div class="buttonThem">
+            <button onclick="nhap2()" class="Them">Thêm</button>
+        </div>
+    </div>
+    <hr>
+    <!-- Phần thông tin sinh viên -->
+    <div>
+        <h3>Danh sách học sinh</h3>
+        <p id="tongsohs" class="thongbaosoluong"></p>
+        <table  class="table" id="table1">
+        </table>
+        <ul class="ulll">
+
+        </ul>
+    </div>
+
+    <script>
+        //Tạo danh sách Năm sinh
+        var year = "";
+        for (let i = 1990; i < 2023; i++) {
+            year = "<option>" + i + "</option>";
+            document.getElementById("list-birthday").innerHTML += year;
+        }
+
+        var Lop = []; // Khai báo mảng sinh viên 
+        // Sự kiện nhập thông tin Lớp
+        function nhap() {
+
+            //lấy giá trị nhập vào từ ô input 
+            var a = document.getElementById('input1').value.trim();
+
+            var b = document.getElementById('input2').value.trim();
+            // event khi nhấn nút nếu chưa nhập thì báo lỗi là chưa nhập
+            document.getElementById('err-a').style.display = (a == '') ? "block" : "none";
+            document.getElementById('err-b').style.display = (b == '') ? "block" : "none";
+            // Thêm sinh viên vào mảng
+            if (a != '' && b != '') // nếu đã nhập input a và input b thì mới được thêm vào danh sách
+            {
+                Lop.push(a)
+
+                // Xử lý sự kiện thêm sv vào danh sách
+                var options = "";
+                for (let i = 0; i < Lop.length; i++) {
+                    options += "<option>" + Lop[i] + "</option>";
+                }
+                document.getElementById("list-Lop").innerHTML = options;
+            }
+
+        }
+
+        // sự kiện nhập THÔNG TIN SINH VIÊN 
+
+        var students = [];
+        var bit=[];
+        
+        function nhap2() {
+            var c = document.getElementById('list-Lop').value.trim();
+            var d = document.getElementById('hoten').value.trim();
+            document.getElementById('err-d').style.display = (d == '') ? "block" : "none";
+            var x = document.getElementById('list-birthday').value;  
+
+            bit.push(x);
+            var birtday="";
+            for(let i =0;i<bit.length;i++)
+            {
+               birtday = '<td id="b1" style="width:45%">' + bit[i] + '</td>';
+            } 
+
+            if (c != '' && d != '') {
+                students.push(d);
+                var student = "";
+                for (let i = 0; i < students.length; i++) {
+                       
+                    student += '<tr>' + '<td >' + (i + 1) + '</td>' + '<td style="width:45%">' + students[i] + '</td>' + birtday  + '</tr>';
+                }
+               
+                document.getElementById("table1").innerHTML = " <tr> <th><span>STT</span></th> <th> <span> Họ tên </span> </th>  <th> <span> Năm sinh </span> </th></tr>" + student;
+            }
+            document.getElementById("soluongsv").innerText = "Đang có " + students.length + " học sinh. ";
+            document.getElementById("tongsohs").innerText = "Tổng số học sinh hiện tại " + students.length + " học sinh. ";
+        }
+
+    </script>
+
+</body>
+
+</html>

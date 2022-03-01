@@ -1,0 +1,60 @@
+.body
+{
+    background: gray;
+}
+.a1
+{
+    width: 40%;
+    height: 500px;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.a2
+{
+    width: 100px;
+    height: 80px;
+    background-color: red;
+    
+    color: white;
+    font-size: 50px;
+    line-height: 80px;
+    text-align: center;
+    margin-top: 10px;
+}
+.a3
+{
+    width: 100px;
+    height: 80px;
+    background-color: blue;
+    
+    color: white;
+    font-size: 50px;
+    line-height: 80px;
+    text-align: center;
+    margin-top: 10px;
+}
+.a4
+{
+    width: 100px;
+    height: 80px;
+    background-color: rgb(38, 240, 38);
+    
+    color: white;
+    font-size: 50px;
+    line-height: 80px;
+    text-align: center;
+    margin-top: 10px;
+}
+.a5
+{
+    width: 100px;
+    height: 80px;
+    background-color: rgb(34, 236, 243);
+    color: white;
+    font-size: 50px;
+    line-height: 80px;
+    text-align: center;
+    margin-top: 10px;
+}
